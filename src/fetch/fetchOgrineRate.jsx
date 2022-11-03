@@ -1,6 +1,6 @@
 import { OGRINE_API_URL, fetchOptions } from './options';
 
-const fetchOgrineRates = (limit = 0, sort = 'DESC') => {
+const fetchOgrineRates = (limit = 0, sort = 'ASC') => {
   const params = {
     sort,
     limit,
