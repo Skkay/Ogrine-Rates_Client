@@ -13,11 +13,6 @@ const Header = () => {
             </div>
             <div className="flex ml-auto">
                 <Card
-                    title="Moyenne des 7 derniers jours"
-                    content={
-                        <RateCardDetail value={505.6} />
-                    } />
-                <Card
                     title="Taux du jour"
                     content={
                         <RateCardDetail value={505.6} percent={25.2} />
