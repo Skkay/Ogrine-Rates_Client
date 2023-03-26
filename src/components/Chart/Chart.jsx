@@ -1,8 +1,12 @@
 import Highcharts from "highcharts/highstock";
 import HighchartsReact from "highcharts-react-official";
 
-const Chart = ({ rates, avgAllTime, avgLastSevenDays }) => {
+const Chart = ({ rates, avgAllTime, avgLastSevenDays, sevenDaysForecastRates }) => {
     const data = rates.map((item) => [Date.parse(item.datetime), item.rate]);
+    const forecastData = [
+        data.at(-1), // Fix the gap between the today's rate and the forecast
+        ...sevenDaysForecastRates.map((item) => [Date.parse(item.datetime), item.prediction_rate]),
+    ];
 
     const plotLineAverageAllTime = {
         id: 'pl_averageAllTime',
@@ -24,6 +28,11 @@ const Chart = ({ rates, avgAllTime, avgLastSevenDays }) => {
         series: [{
             name: 'Cours',
             data: data,
+        }, {
+            name: 'Prévision',
+            data: forecastData,
+            color: '#7CB5EC',
+            dashStyle: 'shortdot',
         }, {
             name: 'Moyenne (totale)',
             color: plotLineAverageAllTime.color,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchOgrineRates } from "./fetch/fetchOgrineRate";
+import { fetchOgrineRates, fetchSevenDaysForecast } from "./fetch/fetchOgrineRate";
 import Header from "./components/Header/Header";
 import Chart from "./components/Chart/Chart";
 import Card from "./components/Card/Card";
@@ -7,10 +7,15 @@ import RateCardDetail from "./components/CardDetail/Rate/RateCardDetail";
 
 const App = () => {
     const [rates, setRates] = useState(null);
+    const [sevenDaysForecastRates, setSevenDaysForecastRates] = useState(null);
 
     useEffect(() => {
         fetchOgrineRates().then((data) => {
             setRates(data.rates);
+        });
+
+        fetchSevenDaysForecast().then((data) => {
+            setSevenDaysForecastRates(data);
         });
     }, []);
 
@@ -32,7 +37,7 @@ const App = () => {
                 <Header currentRate={currentRate} percentEvolution={Math.round(percentEvolution * 100) / 100} />
             </header>
             <main>
-                <Chart rates={rates} avgAllTime={avgAllTime} avgLastSevenDays={avgLastSevenDays} />
+                <Chart rates={rates} avgAllTime={avgAllTime} avgLastSevenDays={avgLastSevenDays} sevenDaysForecastRates={sevenDaysForecastRates} />
 
                 <div className="flex items-center mt-3">
                     <div className="flex mx-auto">
