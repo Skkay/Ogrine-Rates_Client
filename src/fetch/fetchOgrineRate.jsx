@@ -1,4 +1,4 @@
-import { OGRINE_API_URL, fetchOptions } from './options';
+import { OGRINE_API_URL, VITE_PREDICTIONS_OGRINE_API_URL, fetchOptions } from './options';
 
 const fetchOgrineRates = (limit = 0, sort = 'ASC') => {
     const params = {
@@ -22,4 +22,16 @@ const fetchOgrineRates = (limit = 0, sort = 'ASC') => {
     ;
 }
 
-export { fetchOgrineRates };
+const fetchSevenDaysForecast = () => {
+    const init = {
+        ...fetchOptions,
+        method: 'GET',
+    };
+
+    return fetch(`${VITE_PREDICTIONS_OGRINE_API_URL}/seven-days-forecast`, init)
+        .then((res) => res.json())
+        .catch((err) => console.error(err))
+    ;
+}
+
+export { fetchOgrineRates, fetchSevenDaysForecast };

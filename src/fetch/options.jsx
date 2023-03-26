@@ -1,4 +1,5 @@
 const OGRINE_API_URL = import.meta.env.VITE_OGRINE_API_URL;
+const VITE_PREDICTIONS_OGRINE_API_URL = import.meta.env.VITE_PREDICTIONS_OGRINE_API_URL;
 
 const fetchOptions = {
     headers: {
@@ -7,4 +8,4 @@ const fetchOptions = {
     }
 }
 
-export { OGRINE_API_URL, fetchOptions };
+export { OGRINE_API_URL, VITE_PREDICTIONS_OGRINE_API_URL, fetchOptions };
