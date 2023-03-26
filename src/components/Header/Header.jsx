@@ -2,7 +2,7 @@ import Card from "../Card/Card";
 import RateCardDetail from "../CardDetail/Rate/RateCardDetail";
 import ogrine from '../../assets/ogrine.svg'
 
-const Header = () => {
+const Header = ({ currentRate, percentEvolution }) => {
     return (
         <div className="flex items-center bg-white shadow-md rounded-lg">
             <div className="flex items-center">
@@ -15,7 +15,7 @@ const Header = () => {
                 <Card
                     title="Taux du jour"
                     content={
-                        <RateCardDetail value={505.6} percent={25.2} />
+                        <RateCardDetail value={currentRate} percent={percentEvolution} />
                     } />
             </div>
         </div>
