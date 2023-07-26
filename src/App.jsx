@@ -34,17 +34,15 @@ const App = () => {
             <main>
                 <Chart rates={rates} avgAllTime={avgAllTime} avgLastSevenDays={avgLastSevenDays} />
 
-                <div className="flex items-center mt-3">
-                    <div className="flex mx-auto">
-                        <Card
-                            title="Moyenne des 7 derniers jours"
-                            content={<RateCardDetail value={Math.round(avgLastSevenDays * 10) / 10} />}
-                        />
-                        <Card
-                            title="Moyenne totale"
-                            content={<RateCardDetail value={Math.round(avgAllTime * 10) / 10} />}
-                        />
-                    </div>
+                <div className="flex justify-center mx-auto mt-3">
+                    <Card
+                        title="Moyenne des 7 derniers jours"
+                        content={<RateCardDetail value={Math.round(avgLastSevenDays * 10) / 10} />}
+                    />
+                    <Card
+                        title="Moyenne totale"
+                        content={<RateCardDetail value={Math.round(avgAllTime * 10) / 10} />}
+                    />
                 </div>
             </main>
         </div>
