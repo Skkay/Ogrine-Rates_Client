@@ -34,7 +34,7 @@ const App = () => {
             <main>
                 <Chart rates={rates} avgAllTime={avgAllTime} avgLastSevenDays={avgLastSevenDays} />
 
-                <div className="flex flex-col sm:flex-row justify-center mx-auto mt-3">
+                <div className="flex flex-col sm:flex-row gap-3 justify-center mx-auto mt-3">
                     <Card
                         title="Moyenne des 7 derniers jours"
                         content={<RateCardDetail value={Math.round(avgLastSevenDays * 10) / 10} />}
