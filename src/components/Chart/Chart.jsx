@@ -21,6 +21,9 @@ const Chart = ({ rates, avgAllTime, avgLastSevenDays }) => {
     };
 
     const options = {
+        chart: {
+            height: 500,
+        },
         series: [{
             name: 'Cours',
             data: data,
