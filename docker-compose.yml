@@ -6,7 +6,7 @@ services:
     build:
       context: .
       args:
-        VITE_OGRINE_API_URL: "https://ogrine.dofus.skkay.fr/api"
+        VITE_OGRINE_API_URL: "https://example.com"
     container_name: ogrine-rates_client
     restart: always
     ports:

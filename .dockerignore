@@ -24,6 +24,7 @@
 **/docker-compose.yml
 **/Dockerfile
 **/Thumbs.db
+.todo/
 .github/
 docs/
 .editorconfig
