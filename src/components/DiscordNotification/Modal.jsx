@@ -1,8 +1,6 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
-import { BsXLg } from 'react-icons/bs';
-import { PiQuestionFill } from 'react-icons/pi';
-import { BsFillCheckCircleFill, BsFillExclamationCircleFill } from 'react-icons/bs';
+import { BsFillCheckCircleFill, BsFillExclamationCircleFill, BsXLg, BsQuestionCircleFill } from 'react-icons/bs';
 import logo_discord from '../../assets/logo_discord_mark-only_white.svg';
 import { postDiscordWebhook } from '../../fetch/postDiscordWebhook';
 
@@ -100,7 +98,7 @@ const DiscordModal = ({ onBackdropClick, onCloseButtonClick }) => {
             </header>
             <main className="p-3">
                 <div className="relative p-2 border rounded-md">
-                    <span className="absolute -top-2 -right-2 text-2xl text-blurple-400 rotate-[10deg]"><PiQuestionFill /></span>
+                    <span className="absolute -top-2 -right-2 text-2xl text-blurple-400 rotate-[10deg]"><BsQuestionCircleFill /></span>
                     <p>
                         Permet de recevoir le taux de l'Ogrine
                         sur un salon Discord via un webhook. Le
