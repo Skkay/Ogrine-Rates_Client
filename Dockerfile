@@ -1,4 +1,4 @@
-FROM node:14-alpine as build
+FROM node:18-alpine as build
 
 ARG VITE_OGRINE_API_URL="https://example.com"
 ENV VITE_OGRINE_API_URL=$VITE_OGRINE_API_URL
