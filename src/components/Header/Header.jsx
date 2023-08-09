@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import HeaderCard from "../Card/HeaderCard";
 import RateCardDetail from "../CardDetail/Rate/RateCardDetail";
 import ogrine from '../../assets/ogrine.svg'
@@ -21,5 +22,10 @@ const Header = ({ currentRate, percentEvolution }) => {
         </div>
     );
 }
+
+Header.propTypes = {
+    currentRate: PropTypes.number.isRequired,
+    percentEvolution: PropTypes.number.isRequired,
+};
 
 export default Header;
