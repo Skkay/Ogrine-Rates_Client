@@ -5,6 +5,7 @@ import Chart from "./components/Chart/Chart";
 import Card from "./components/Card/Card";
 import RateCardDetail from "./components/CardDetail/Rate/RateCardDetail";
 import DiscordNotification from "./components/DiscordNotification/DiscordNotification";
+import SocialNetworks from "./components/SocialNetworks/SocialNetworks";
 
 const App = () => {
     const [rates, setRates] = useState(null);
@@ -49,6 +50,7 @@ const App = () => {
                 </main>
             </div>
             <DiscordNotification />
+            <SocialNetworks />
         </>
     );
 };
